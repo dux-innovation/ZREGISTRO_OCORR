@@ -1,0 +1,35 @@
+<mvc:View controllerName="com.duxinnovation.ehs.registroocorrencias.controller.Worklist" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:smartTable="sap.ui.comp.smarttable">
+	<Page id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>worklistViewTitle}">
+		<content>
+		    <Button text = "Novo Registro" iconDensityAware="false" iconFirst="false" type="Emphasized" press  = "handleTableSelectDialogPress"></Button>
+		    <smartTable:SmartTable id="smartTable_ResponsiveTable" 
+			                       tableType="ResponsiveTable"
+			                       editable="false"
+				                   entitySet="Ocorrencias" 
+				                   useVariantManagement="true" 
+				                   useTablePersonalisation="true" 
+				                   initiallyVisibleFields="IdOcorre,DsOcorre,DtOcorre,DsStatus"
+				                   header="Ocorrencias" 
+				                   showRowCount="true"
+				                   enableAutoBinding="true">
+			</smartTable:SmartTable>
+		</content>
+		<footer>
+			<OverflowToolbar id="footerToolbar">
+				<ToolbarSpacer/>
+				<Button id="shareButton" tooltip="{i18n>shareTooltip}" icon="sap-icon://action" press="onSharePress">
+					<dependents>
+						<ActionSheet id="shareSheet" showCancelButton="true" placement="Top">
+							<buttons>
+								<Button id="shareEmail" icon="sap-icon://email" text="{i18n>shareSendEmail}" press="onShareEmailPress"/>
+								<Button id="shareInJam" icon="sap-icon://jam" text="{i18n>shareOnJamTitle}" press="onShareInJamPress" visible="{FLP>/isShareInJamActive}"/>
+								<footerbar:AddBookmarkButton id="shareTile" appData="{ path: 'worklistView>/saveAsTileTitle', formatter: '.formatter.shareTileData' }"/>
+							</buttons>
+						</ActionSheet>
+					</dependents>
+				</Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

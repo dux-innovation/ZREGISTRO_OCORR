@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZOCORRENCIAS_SRV" xml:lang="pt" sap:schema-version="1"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="TY_OCORRENCIA" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IdOcorre"/>
+                </Key>
+                <Property Name="IvDataFim" Type="Edm.DateTime" Precision="7" sap:label="EHS - Data da Ocorrência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdMotivo" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="EHS - Motivo Ocorrência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IvDataInicio" Type="Edm.DateTime" Precision="7" sap:label="EHS - Data da Ocorrência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdOcorre" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="EHS - Id da Ocorrência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DtOcorre" Type="Edm.DateTime" Precision="7" sap:label="EHS - Data da Ocorrência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TmOcorre" Type="Edm.Time" Precision="0" sap:label="EHS - Hora da Ocorrência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdLocali" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="ID Local" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DsLocali" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="EHS - Local Especifico" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DsOcorre" Type="Edm.String" Nullable="false" MaxLength="200" sap:label="EHS - Descrição da Ocorrencia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdStatus" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="EHS - Status da Ocorrência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DsStatus" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="EHS - Descrição do Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdClassi" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Classif." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdSubcla" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Id. da subclassificação" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TxUsucri" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Usuário" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DtCriaca" Type="Edm.DateTime" Precision="7" sap:label="EHS - Data de Criação da ocorrência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TmCriaca" Type="Edm.Time" Precision="0" sap:label="EHS - Hora de Criação da ocorrência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TxNomelo" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Nome Local" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZOCORRENCIAS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Ocorrencias" EntityType="ZOCORRENCIAS_SRV.TY_OCORRENCIA" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="./sap/ZOCORRENCIAS_SRV/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="./sap/ZOCORRENCIAS_SRV/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
