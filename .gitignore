@@ -10,3 +10,10 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+visual_ext_index.html
+/webapp/visual_ext_index.html
+UIAdaptation_index.html
+changes_preview_index.html
+mock_preview_sapui5.html
+.*/mock_preview_sapui5.html
+sap-ui-cachebuster-info.json
