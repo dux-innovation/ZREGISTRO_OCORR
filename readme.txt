@@ -1,5 +1,7 @@
 ==== WELCOME ====
 
+ola
+
 This is your copy of the UI5 Worklist Application Template.
 
 Standalone runnable files (*.html) are located in the test-folder
