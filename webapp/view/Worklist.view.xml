@@ -16,7 +16,7 @@
 			<!--</smartTable:SmartTable>-->
 			<Table id="ocorrenciasTable"
         		inset="false" 
-        		items="{
+        		items="{ 
         			path: '/Ocorrencias',
         			sorter: {
         				path: 'IdOcorre'
