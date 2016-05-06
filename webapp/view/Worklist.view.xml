@@ -17,7 +17,7 @@
 			<Table id="ocorrenciasTable"
         		inset="false" 
         		items="{  
-        			path: '/Ocorrencias', 
+        			path: 'Ocorrencias', 
         			sorter: {
         				path: 'IdOcorre'
         			}
