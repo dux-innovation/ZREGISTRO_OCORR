@@ -3,17 +3,58 @@
 	<Page id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>worklistViewTitle}">
 		<content>
 		    <Button text = "Novo Registro" iconDensityAware="false" iconFirst="false" type="Emphasized" press  = "handleTableSelectDialogPress"></Button>
-		    <smartTable:SmartTable id="smartTable_ResponsiveTable" 
-			                       tableType="ResponsiveTable"
-			                       editable="false"
-				                   entitySet="Ocorrencias" 
-				                   useVariantManagement="true" 
-				                   useTablePersonalisation="true" 
-				                   initiallyVisibleFields="IdOcorre,DsOcorre,DtOcorre,DsStatus"
-				                   header="Ocorrencias" 
-				                   showRowCount="true"
-				                   enableAutoBinding="true">
-			</smartTable:SmartTable>
+		    <!--<smartTable:SmartTable id="smartTable_ResponsiveTable" -->
+			<!--                       tableType="ResponsiveTable"-->
+			<!--                       editable="false"-->
+			<!--	                   entitySet="Ocorrencias" -->
+			<!--	                   useVariantManagement="true" -->
+			<!--	                   useTablePersonalisation="true" -->
+			<!--	                   initiallyVisibleFields="IdOcorre,DsOcorre,DtOcorre,DsStatus"-->
+			<!--	                   header="Ocorrencias" -->
+			<!--	                   showRowCount="true"-->
+			<!--	                   enableAutoBinding="true">-->
+			<!--</smartTable:SmartTable>-->
+			<Table id="ocorrenciasTable"
+        		inset="false"
+        		items="{
+        			path: '/Ocorrencias',
+        			sorter: {
+        				path: 'IdOcorre'
+        			}
+        		}">
+        		<headerToolbar>
+        			<Toolbar>
+        				<Title text="Ocorrências" level="H2"/>
+        			</Toolbar>
+        		</headerToolbar>
+        		<columns>
+        			<Column>
+        				<Text text="Data" />
+        			</Column>
+        			<Column>
+        				<Text text="Unidade" />
+        			</Column>
+        			<Column>
+        				<Text text="Resumo" />
+        			</Column>
+        			<Column>
+        				<Text text="Status" />
+        			</Column>
+        		</columns>
+        		<items>
+        			<ColumnListItem>
+        				<cells>
+        					<ObjectIdentifier
+        						title="{DsOcorre}"
+        						text="{IdOcorre}"/>
+        					<Text text="{DtOcorre}" />
+        					<Text text="{TxNomelo}" />
+        					<Text text="{DsOcorre}" />
+        					<Text text="{DsStatus}" />
+        				</cells>
+        			</ColumnListItem>
+        		</items>
+        	</Table>
 		</content>
 		<footer>
 			<OverflowToolbar id="footerToolbar">
