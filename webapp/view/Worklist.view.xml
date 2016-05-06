@@ -15,7 +15,7 @@
 			<!--	                   enableAutoBinding="true">-->
 			<!--</smartTable:SmartTable>-->
 			<Table id="ocorrenciasTable"
-        		inset="false"
+        		inset="false" 
         		items="{
         			path: '/Ocorrencias',
         			sorter: {
