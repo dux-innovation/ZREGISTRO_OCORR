@@ -1,13 +1,15 @@
 sap.ui.define([
 	"com/duxinnovation/ehs/registroocorrencias/controller/BaseController",
 	'jquery.sap.global',
+	'sap/m/Button',
 	'sap/m/MessageToast',
+	'sap/m/Dialog',
 	'sap/ui/core/Fragment',
 	'sap/ui/core/mvc/Controller',
 	'sap/ui/model/Filter',
 	'sap/ui/model/json/JSONModel',
 	"com/duxinnovation/ehs/registroocorrencias/model/formatter"
-], function(BaseController,jQuery, MessageToast, Fragment, Controller, Filter, JSONModel, formatter) {
+], function(BaseController,jQuery, Button, MessageToast, Dialog, Fragment, Controller, Filter, JSONModel, formatter) {
 	"use strict";
 
 	return BaseController.extend("com.duxinnovation.ehs.registroocorrencias.controller.Worklist", {
@@ -73,7 +75,40 @@ sap.ui.define([
 				});
 			oShareDialog.open();
 		},
-
+		
+        onItemPress : function(oEvent) {
+          var oItem = oEvent.getParameter("listItem") || oEvent.getSource();
+          var oCtx = oItem.getBindingContext();
+          var sPath = oCtx ? oCtx.getPath() : undefined;
+          
+          var dialog = new Dialog({
+				title: 'Available Products',
+				contentWidth: "550px",
+				contentHeight: "300px",
+				// content: new List({
+				// 	items: {
+				// 		path: '/Ocorrencias',
+				// 		template: new StandardListItem({
+				// 			title: "{DsOcorre}",
+				// 			counter: "{DsStatus}"
+				// 		})
+				// 	}
+				// }),
+				beginButton: new Button({
+					text: 'Close',
+					press: function () {
+						dialog.close();
+					}
+				}),
+				afterClose: function() {
+					dialog.destroy();
+				}
+			});
+ 
+			//to get access to the global model
+			this.getView().addDependent(dialog);
+			dialog.open();
+        },
 		/* =========================================================== */
 		/* internal methods                                            */
 		/* =========================================================== */

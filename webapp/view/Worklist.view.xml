@@ -16,12 +16,16 @@
 			<!--</smartTable:SmartTable>-->
 			<Table id="ocorrenciasTable"
         		inset="false" 
+        		noDataText="Nenhuma ocorrência encontrada"
         		items="{  
-        			path: 'Ocorrencias', 
+        			path: '/Ocorrencias', 
         			sorter: {
         				path: 'IdOcorre'
         			}
-        		}">
+        		}"
+        		growingThreshold="3"
+                growing="true"
+                itemPress="onItemPress">
         		<headerToolbar>
         			<Toolbar>
         				<Title text="Ocorrências" level="H2"/>
@@ -42,11 +46,8 @@
         			</Column>
         		</columns>
         		<items>
-        			<ColumnListItem>
+        			<ColumnListItem type="Active">
         				<cells>
-        					<ObjectIdentifier
-        						title="{DsOcorre}"
-        						text="{IdOcorre}"/>
         					<Text text="{DtOcorre}" />
         					<Text text="{TxNomelo}" />
         					<Text text="{DsOcorre}" />
